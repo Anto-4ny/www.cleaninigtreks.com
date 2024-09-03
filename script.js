@@ -26,26 +26,53 @@ function nextSlide() {
     slides[currentSlide].className = 'slide active';
 }
 
-// Typing Effect
-let text = "Welcome to Cleaning Treks - Professional Cleaning Services";
-let index = 0;
-let typingElement = document.getElementById('typing-text');
+// Search Functionality
+document.getElementById('search-icon').addEventListener('click', function() {
+    let searchInput = document.getElementById('search-input').value.toLowerCase();
+    let services = document.querySelectorAll('.service');
+    let found = false;
 
-function typeText() {
-    if (index < text.length) {
-        typingElement.textContent += text.charAt(index);
-        index++;
-        setTimeout(typeText, 100);
+    services.forEach(service => {
+        let serviceName = service.querySelector('h3').textContent.toLowerCase();
+        if (serviceName.includes(searchInput)) {
+            service.scrollIntoView({ behavior: 'smooth' });
+            found = true;
+        }
+    });
+
+    if (!found) {
+        alert('Service not found. Please try again.');
+    }
+});
+
+// Banner Text Typing Effect
+let typingText = document.getElementById('typing-text');
+let bannerTexts = ["Welcome to Cleaning Treks", "Professional Cleaning Services", "Your Clean Space, Our Priority"];
+let currentIndex = 0;
+let charIndex = 0;
+
+function typeBannerText() {
+    if (charIndex < bannerTexts[currentIndex].length) {
+        typingText.textContent += bannerTexts[currentIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(typeBannerText, 100);
     } else {
-        setTimeout(() => {
-            typingElement.textContent = "";
-            index = 0;
-            typeText();
-        }, 5000);
+        setTimeout(deleteBannerText, 2000);
     }
 }
 
-typeText();
+function deleteBannerText() {
+    if (charIndex > 0) {
+        typingText.textContent = typingText.textContent.slice(0, -1);
+        charIndex--;
+        setTimeout(deleteBannerText, 50);
+    } else {
+        currentIndex = (currentIndex + 1) % bannerTexts.length;
+        setTimeout(typeBannerText, 500);
+    }
+}
+
+typeBannerText();
 
 // Cart Functionality
 let cartCount = 0;
@@ -73,4 +100,3 @@ function addServiceToCart(category, service) {
 document.querySelector('.hamburger-icon').addEventListener('click', () => {
     document.querySelector('.hamburger-menu').classList.toggle('show');
 });
-  
