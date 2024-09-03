@@ -10,10 +10,9 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333;
+    background-color: #2C3E50;
     color: white;
     padding: 10px 20px;
-    position: relative;
 }
 
 .logo a {
@@ -22,7 +21,29 @@ header {
     font-size: 24px;
 }
 
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#search-input {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#search-icon {
+    background-color: #E67E22;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
 .hamburger {
+    display: none;
     position: relative;
 }
 
@@ -44,7 +65,7 @@ header {
     position: absolute;
     top: 50px;
     right: 0;
-    background-color: #333;
+    background-color: #2C3E50;
     width: 200px;
     padding: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -57,19 +78,21 @@ header {
     color: white;
     text-decoration: none;
     padding: 10px;
-    background-color: #444;
+    background-color: #34495E;
     text-align: center;
     border-radius: 5px;
     display: block;
 }
 
-.nav-links {
-    list-style: none;
-    padding: 0;
+.desktop-nav {
+    display: flex;
+    gap: 20px;
 }
 
-.nav-links li {
-    margin-bottom: 10px;
+.desktop-nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
 }
 
 .cart-icon {
@@ -80,7 +103,7 @@ header {
     position: absolute;
     top: -10px;
     right: -10px;
-    background-color: red;
+    background-color: #E74C3C;
     color: white;
     border-radius: 50%;
     padding: 5px 10px;
@@ -125,7 +148,7 @@ header {
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 20px;
-    background-color: #f4f4f4;
+    background-color: #ECF0F1;
 }
 
 .category {
@@ -149,34 +172,94 @@ header {
     transform: scale(1.05);
 }
 
-.service-selection {
-    width: 100%;
-    padding: 5px;
-    margin-top: 10px;
+/* Services Section */
+.services {
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.service {
+    display: flex;
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.service img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.service-description {
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.service-description h3 {
+    margin: 0 0 10px;
+}
+
+.service-description p {
+    margin: 0 0 20px;
+}
+
+.inquire-btn,
+.add-to-cart-btn {
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.inquire-btn {
+    background-color: #3498DB;
+    color: white;
+}
+
+.add-to-cart-btn {
+    background-color: #E67E22;
+    color: white;
 }
 
 /* Footer */
 footer {
-    background-color: #333;
-    color: white;
     text-align: center;
     padding: 20px;
-    margin-top: 20px;
+    background-color: #2C3E50;
+    color: white;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
+/* Responsive Styles */
+@media only screen and (max-width: 768px) {
+    .desktop-nav {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
     .hamburger-menu {
         display: flex;
     }
 
-    .categories {
+    .services {
         flex-direction: column;
-        align-items: center;
     }
 
-    .category {
+    .service {
+        flex-direction: column;
+    }
+
+    .service img {
         width: 100%;
     }
+
+    .service-description {
+        text-align: center;
+    }
 }
-  
