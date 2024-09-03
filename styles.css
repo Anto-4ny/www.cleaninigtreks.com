@@ -263,3 +263,15 @@ footer {
         text-align: center;
     }
 }
+
+/* General Pop-in Effect */
+.pop-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.pop-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
