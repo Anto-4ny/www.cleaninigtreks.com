@@ -80,6 +80,7 @@ let cartIcon = document.getElementById('cart-icon');
 let cartCountElement = document.getElementById('cart-count');
 let serviceSelections = document.querySelectorAll('.service-selection');
 
+
 serviceSelections.forEach(selection => {
     selection.addEventListener('change', () => {
         if (selection.value) {
@@ -89,6 +90,33 @@ serviceSelections.forEach(selection => {
         }
     });
 });
+
+// Function to check if an element is in the viewport
+function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+
+// Function to add the 'show' class to elements in the viewport
+function showPopInElements() {
+    const elements = document.querySelectorAll('.pop-in');
+    elements.forEach(element => {
+        if (isInViewport(element)) {
+            element.classList.add('show');
+        }
+    });
+}
+
+// Event listener for scrolling to trigger the pop-in effect
+window.addEventListener('scroll', showPopInElements);
+
+// Trigger the effect on page load
+window.addEventListener('load', showPopInElements);
 
 function addServiceToCart(category, service) {
     // Add logic to store the selected service to the cart.
