@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cleaning Treks</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="#" id="home-link">Cleaning Treks</a>
+        </div>
+        <nav>
+            <div class="hamburger">
+                <div class="hamburger-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="hamburger-menu">
+                    <a href="#" id="home-link">Cleaning Treks</a>
+                    <ul class="nav-links">
+                        <li><a href="#" id="services-link">Services</a></li>
+                        <li><a href="#" id="about-link">About Us</a></li>
+                        <li><a href="#" id="contact-link">Contact Us</a></li>
+                    </ul>
+                    <button class="login-btn" onclick="alert('Login functionality coming soon!')">Login</button>
+                </div>
+            </div>
+        </nav>
+        <div class="cart-icon">
+            <img src="cart-icon.png" alt="Cart" id="cart-icon">
+            <span id="cart-count">0</span>
+        </div>
+    </header>
+
+    <section class="banner">
+        <div class="banner-slider">
+            <div class="slide active" style="background-image: url('banner1.jpg');"></div>
+            <div class="slide" style="background-image: url('banner2.jpg');"></div>
+            <div class="slide" style="background-image: url('banner3.jpg');"></div>
+            <div class="banner-text">
+                <h1 id="typing-text"></h1>
+            </div>
+        </div>
+    </section>
+
+    <section class="categories">
+        <div class="category">
+            <img src="home-cleaning-icon.png" alt="Home Cleaning">
+            <p>Home Cleaning</p>
+            <select class="service-selection" data-category="Home Cleaning">
+                <option value="Basic Cleaning">Basic Cleaning</option>
+                <option value="Deep Cleaning">Deep Cleaning</option>
+            </select>
+        </div>
+        <div class="category">
+            <img src="office-cleaning-icon.png" alt="Office Cleaning">
+            <p>Office Cleaning</p>
+            <select class="service-selection" data-category="Office Cleaning">
+                <option value="Regular Cleaning">Regular Cleaning</option>
+                <option value="Intensive Cleaning">Intensive Cleaning</option>
+            </select>
+        </div>
+        <div class="category">
+            <img src="cctv-installation-icon.png" alt="CCTV Installation">
+            <p>CCTV Installation</p>
+            <select class="service-selection" data-category="CCTV Installation">
+                <option value="Home Installation">Home Installation</option>
+                <option value="Business Installation">Business Installation</option>
+            </select>
+        </div>
+        <div class="category">
+            <img src="fumigation-icon.png" alt="Fumigation">
+            <p>Fumigation</p>
+            <select class="service-selection" data-category="Fumigation">
+                <option value="Residential Fumigation">Residential Fumigation</option>
+                <option value="Commercial Fumigation">Commercial Fumigation</option>
+            </select>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Cleaning Treks. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+  </html>
+  
