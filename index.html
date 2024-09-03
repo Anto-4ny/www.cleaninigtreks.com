@@ -7,85 +7,109 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Header -->
     <header>
         <div class="logo">
-            <a href="#" id="home-link">Cleaning Treks</a>
+            <a href="index.html">Cleaning Treks</a>
         </div>
-        <nav>
-            <div class="hamburger">
-                <div class="hamburger-icon">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <div class="hamburger-menu">
-                    <a href="#" id="home-link">Cleaning Treks</a>
-                    <ul class="nav-links">
-                        <li><a href="#" id="services-link">Services</a></li>
-                        <li><a href="#" id="about-link">About Us</a></li>
-                        <li><a href="#" id="contact-link">Contact Us</a></li>
-                    </ul>
-                    <button class="login-btn" onclick="alert('Login functionality coming soon!')">Login</button>
-                </div>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search services...">
+            <button id="search-icon">🔍</button>
+        </div>
+        <div class="hamburger">
+            <div class="hamburger-icon">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
+            <nav class="hamburger-menu">
+                <ul class="nav-links">
+                    <li><a href="index.html" id="home-link">Home</a></li>
+                    <li><a href="services.html" id="services-link">Services</a></li>
+                    <li><a href="about.html" id="about-link">About Us</a></li>
+                    <li><a href="contact.html" id="contact-link">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+        <nav class="desktop-nav">
+            <ul class="nav-links">
+                <li><a href="index.html" id="home-link">Home</a></li>
+                <li><a href="services.html" id="services-link">Services</a></li>
+                <li><a href="about.html" id="about-link">About Us</a></li>
+                <li><a href="contact.html" id="contact-link">Contact Us</a></li>
+            </ul>
         </nav>
-        <div class="cart-icon">
-            <img src="cart-icon.png" alt="Cart" id="cart-icon">
-            <span id="cart-count">0</span>
+        <div class="cart-icon" id="cart-icon">
+            🛒 <span id="cart-count">0</span>
         </div>
     </header>
 
-    <section class="banner">
-        <div class="banner-slider">
-            <div class="slide active" style="background-image: url('banner1.jpg');"></div>
-            <div class="slide" style="background-image: url('banner2.jpg');"></div>
-            <div class="slide" style="background-image: url('banner3.jpg');"></div>
-            <div class="banner-text">
-                <h1 id="typing-text"></h1>
+    <!-- Banner -->
+    <section class="banner-slider">
+        <div class="slide active" style="background-image: url('banner1.jpg');">
+            <div class="banner-text" id="typing-text"></div>
+        </div>
+        <div class="slide" style="background-image: url('banner2.jpg');">
+            <div class="banner-text"></div>
+        </div>
+        <div class="slide" style="background-image: url('banner3.jpg');">
+            <div class="banner-text"></div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories">
+        <div class="category">
+            <img src="category1.png" alt="Fumigation">
+            <p>Fumigation</p>
+        </div>
+        <div class="category">
+            <img src="category2.png" alt="Carpet Cleaning">
+            <p>Carpet Cleaning</p>
+        </div>
+        <div class="category">
+            <img src="category3.png" alt="Window Cleaning">
+            <p>Window Cleaning</p>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services">
+        <div class="service">
+            <img src="service1.jpg" alt="Service 1">
+            <div class="service-description">
+                <h3>Professional Fumigation</h3>
+                <p>We provide expert fumigation services to ensure your environment is pest-free.</p>
+                <button class="inquire-btn">Inquire</button>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+        <div class="service">
+            <img src="service2.jpg" alt="Service 2">
+            <div class="service-description">
+                <h3>Carpet Cleaning</h3>
+                <p>Our deep carpet cleaning services remove dirt, allergens, and odors, leaving your carpet fresh and clean.</p>
+                <button class="inquire-btn">Inquire</button>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+        <div class="service">
+            <img src="service3.jpg" alt="Service 3">
+            <div class="service-description">
+                <h3>Window Cleaning</h3>
+                <p>We offer professional window cleaning services to make your windows spotless and streak-free.</p>
+                <button class="inquire-btn">Inquire</button>
+                <button class="add-to-cart-btn">Add to Cart</button>
             </div>
         </div>
     </section>
 
-    <section class="categories">
-        <div class="category">
-            <img src="home-cleaning-icon.png" alt="Home Cleaning">
-            <p>Home Cleaning</p>
-            <select class="service-selection" data-category="Home Cleaning">
-                <option value="Basic Cleaning">Basic Cleaning</option>
-                <option value="Deep Cleaning">Deep Cleaning</option>
-            </select>
-        </div>
-        <div class="category">
-            <img src="office-cleaning-icon.png" alt="Office Cleaning">
-            <p>Office Cleaning</p>
-            <select class="service-selection" data-category="Office Cleaning">
-                <option value="Regular Cleaning">Regular Cleaning</option>
-                <option value="Intensive Cleaning">Intensive Cleaning</option>
-            </select>
-        </div>
-        <div class="category">
-            <img src="cctv-installation-icon.png" alt="CCTV Installation">
-            <p>CCTV Installation</p>
-            <select class="service-selection" data-category="CCTV Installation">
-                <option value="Home Installation">Home Installation</option>
-                <option value="Business Installation">Business Installation</option>
-            </select>
-        </div>
-        <div class="category">
-            <img src="fumigation-icon.png" alt="Fumigation">
-            <p>Fumigation</p>
-            <select class="service-selection" data-category="Fumigation">
-                <option value="Residential Fumigation">Residential Fumigation</option>
-                <option value="Commercial Fumigation">Commercial Fumigation</option>
-            </select>
-        </div>
-    </section>
-
+    <!-- Footer -->
     <footer>
         <p>&copy; 2024 Cleaning Treks. All rights reserved.</p>
     </footer>
 
     <script src="script.js"></script>
 </body>
-  </html>
-  
+                        </html>
+            
